@@ -1,0 +1,5 @@
+const APP_CONSTANTS = {
+    UI_BUILD_DIST_ROUTE = ''
+}
+
+module.exports.APP_CONSTANTS = APP_CONSTANTS;
