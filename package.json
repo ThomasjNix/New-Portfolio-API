@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "build-ui": "npm run build --prefix ../New-Portfolio/",
-    "start-dev": "nodemon server"
+    "build-ui": "npm run build --prefix ../New-Portfolio/"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
