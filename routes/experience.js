@@ -3,6 +3,6 @@ const express = require('express'),
       experienceController = require('../controllers/experience-controller');
 
 router.get('/experience', experienceController.get_all_experience);
-router.get('/projects', experienceController.get_all_projects);
+router.get('/experience/:id', experienceController.get_one_experience);
     
 module.exports = router;

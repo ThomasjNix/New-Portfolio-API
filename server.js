@@ -3,17 +3,17 @@
 })();
 
 //  Initialize and import packages
-const express = require('express');
-const router = express.Router();
-const rootRoutes = require('./routes/root');
-const path = require('path');
-const contactRoutes = require('./routes/contact');
-const experienceRoutes = require('./routes/experience');
+const express = require('express'),
+      rootRoutes = require('./routes/root'),
+      path = require('path'),
+      contactRoutes = require('./routes/contact'),
+      experienceRoutes = require('./routes/experience'),
+      mongoose = require('mongoose');;
 
 // Create server
 const app = express();
 
-// Configure settings
+// Configure application settings
 const static_directory = path.join(__dirname + '/dist/portfolio/');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -24,6 +24,14 @@ app.use(express.json())
    .use('/api/contact', contactRoutes)
    .use('/api/experience', experienceRoutes)
    .all('*', rootRoutes);
+
+// Connect to MongoDB database via Mongoose
+mongoose.connect('mongodb://127.0.0.1/my_database', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+});
 
 // Configure port   
 const PORT = process.env.PORT || 8080;

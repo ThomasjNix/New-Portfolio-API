@@ -3,7 +3,7 @@ const experience_controller = {
         console.log(req);
         res.send('test');
     },
-    get_all_projects: (req, res, next) => {
+    get_one_experience: (req, res, next) => {
         console.log(req);
         res.send('test');
     }
