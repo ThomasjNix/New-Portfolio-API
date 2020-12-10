@@ -8,6 +8,7 @@ const express = require('express'),
       path = require('path'),
       contactRoutes = require('./routes/contact'),
       experienceRoutes = require('./routes/experience'),
+      adminRoutes = require('./routes/admin'),
       mongoose = require('mongoose');;
 
 // Create server
@@ -23,6 +24,7 @@ app.use(express.json())
    .use(express.static(static_directory))
    .use('/api/contact', contactRoutes)
    .use('/api/experience', experienceRoutes)
+   .use('/api/admin', adminRoutes)
    .all('*', rootRoutes);
 
 // Connect to MongoDB database via Mongoose
