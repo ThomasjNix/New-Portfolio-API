@@ -1,10 +1,12 @@
-import mongoose, { model } from 'mongoose';
-const { Schema } = mongoose;
+const mongoose = require('mongoose'),
+      ObjectId = mongoose.Types.ObjectId,
+      Schema = mongoose.Schema;
 
 const experienceSchema = new Schema({
-  title:  String,
+  title: String,
   description: String,
-  imageSrc:   String
+  imageSrc: String,
+  experienceID: ObjectId
 });
 
-model.exports = experienceSchema;
+module.exports = experienceSchema;

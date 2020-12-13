@@ -29,7 +29,7 @@ app.use(express.json())
     .use('/auth', authRoutes)
     .use(function (err, req, res, next) {
         if (err.name === 'UnauthorizedError') {
-            return res.status(403).send(false);
+             return res.status(403).send(false);
         }
     })
     .all('*', rootRoutes);
@@ -41,6 +41,9 @@ mongoose.connect('mongodb://127.0.0.1/my_database', {
     useFindAndModify: false,
     useCreateIndex: true
 });
+
+const database = mongoose.connection;
+database.on('error', console.error.bind(console, 'Error connecting to MongoDB'));
 
 // Configure port   
 const PORT = process.env.PORT || 8080;

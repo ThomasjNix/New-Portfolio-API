@@ -5,4 +5,5 @@ const express = require('express'),
 
 router.post('/login', adminController.login);
 router.post('/experience', adminController.add_new_experience);
+router.delete('/experience/:id', adminController.delete_experience);
 module.exports = router;
