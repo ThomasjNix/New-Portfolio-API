@@ -1,11 +1,9 @@
 const experience_controller = {
     get_all_experience: (req, res, next) => {
-        console.log(req);
-        res.send('test');
+        res.send('TODO');
     },
     get_one_experience: (req, res, next) => {
-        console.log(req);
-        res.send('test');
+        res.send('TODO');
     }
 }
 
